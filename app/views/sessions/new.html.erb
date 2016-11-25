@@ -1,0 +1,32 @@
+<% provide :title, I18n.t("login") %>
+<div class="container">
+  <div class="row">
+    <div class="img pull-left img_top">
+      <%= image_tag "elearning.jpg" %>
+    </div>
+    <div class="login pull-right">
+      <div class="header">
+        <h1><%= t("login") %></h1>
+        <span><%= t("login_mess") %></span>
+      </div>
+
+      <%= form_for :session, url: login_path do |f| %>
+        <div class="form-group clearfix">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+
+        <div class="form-group clearfix">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit t("login"), class: "btn btn-primary" %>
+        </div>
+
+        <p><%= t("new_user") %> <%= link_to t("sign_up_now"), "#" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
