@@ -3,8 +3,52 @@
     <%= link_to t("elearning"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("home"), root_path %></span></li>
-        <li><%= link_to t("sign_in"), "#" %></li>
+        <li><%= link_to t("home"), root_path, class: "fa fa-home" %></span></li>
+        <% if logged_in? %>
+          <% if current_user.is_admin? %>
+            <li class="dropdown">
+              <%= link_to "#", {class: "dropdown-toggle",
+                "data-toggle": "dropdown"} do %>
+                <%= t "is_admin.role" %>
+                <b class="caret"></b>
+              <% end %>
+              <ul class="dropdown-menu" role="menu">
+                <li><%= link_to t(" management_user"),
+                  "#", class: "fa fa-github-alt" %></li>
+                <li><%= link_to t(" management_category"),
+                   "#", class: "fa fa-wpforms" %></li>
+                <li><%= link_to t(" management_word"),
+                   "#", class: "fa fa-adn" %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to t("user"), "#", class: "fa fa-bars" %></li>
+          <% end %>
+          <li class="dropdown">
+            <%= link_to "#", {class: "dropdown-toggle",
+              "data-toggle": "dropdown"} do %>
+              <%= gravatar_for current_user, Settings.small_avatar %>
+              <%= current_user.name %>
+              <b class="caret"></b>
+            <% end %>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to t(" | profile"), "#",
+               class: "fa fa-file-o" %></li>
+              <li><%= link_to t(" | Categories_list"), "#",
+               class: "fa fa-align-justify" %></li>
+              <li><%= link_to t(" | settings"), "#",
+               class: "fa fa-cog" %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t(" | sign_out"), logout_path, method: :delete,
+                 class: "fa fa-arrow-left" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to t("sign_in"), login_path,
+           class: "fa fa-arrow-right" %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

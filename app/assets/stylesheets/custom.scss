@@ -312,3 +312,44 @@ span.picture {
 .right {
   float: right;
 }
+
+.login {
+  width: 25%;
+  margin-top:20px;
+}
+
+.login h1,
+.locations h1,
+.order h1 {
+  color:#5c656c;
+  font-size:24px;
+  font-family:Museo-700, sans;
+  margin-bottom:24px;
+  padding-bottom:24px;
+  padding-top:38px;
+  border-bottom:1px #b4b3b3 dashed;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  background:#f7f7f7;
+  border:none;
+  outline:none;
+  height:40px;
+  width:100%;
+  margin-bottom:7px;
+  padding-left:10px;
+  color:#9aa0a5;
+  font-family:Museo-300, sans;
+  font-size:13px
+}
+
+.img {
+  width:562px;
+  margin-left: -50px;
+  margin-top:60px;
+}
+
+.img_top{
+  margin-top:80px;
+}

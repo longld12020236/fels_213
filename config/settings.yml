@@ -1,0 +1,5 @@
+big_avatar: 80
+small_avatar: 20
+max_name: 50
+max_email: 255
+min_password: 6
