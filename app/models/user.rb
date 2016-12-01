@@ -14,4 +14,6 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: Settings.min_password}
   has_secure_password
+
+  scope :alphabet, ->{order :name}
 end
