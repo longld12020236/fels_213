@@ -30,8 +30,13 @@ en:
     phone: "01664708942"
   home_page:
     intro: "Welcome to E Learning"
+    hello: "Hello %{name}"
+    sign_up: "Sign up"
   login_error: "Invalid email or password"
   login: "Log In"
   login_mess: "Access your account."
   require_login: "Please log in."
   new_user: "New user?"
+  create_account: "Create new account"
+  sign_up: "Sign Up"
+  view_profile: "View my profile"
