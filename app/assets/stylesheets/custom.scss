@@ -296,7 +296,7 @@ span.picture {
   width: 577px;
 }
 
-.subtoc {
+.fix_box {
   background: #ffffff;
   width: 80%;
   margin: 0 auto;
@@ -352,4 +352,13 @@ span.picture {
 
 .img_top{
   margin-top:80px;
+}
+
+.error_color{
+  color: red;
+}
+
+.register {
+  background: #eff9e5;
+  border: solid thin #e8fcd4;
 }
