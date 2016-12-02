@@ -8,7 +8,5 @@ Bundler.require(*Rails.groups)
 
 module Fels213
   class Application < Rails::Application
-    Config::Integration::Rails::Railtie.preload
-    config.time_zone = Settings.time_zone
   end
 end
