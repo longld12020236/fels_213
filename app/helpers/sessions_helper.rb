@@ -14,7 +14,10 @@ module SessionsHelper
 
   def correct_user
     @user = User.find_by id: params[:id]
-    redirect_to root_url unless current_user? @user
+    unless current_user.is_admin? || current_user?(@user)
+      flash[:danger] = t "edit_require"
+      redirect_to root_url
+    end
   end
 
   def logged_in?
