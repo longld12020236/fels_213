@@ -1,0 +1,25 @@
+<% provide(:title, @category.title ) %>
+<div class="fix_box">
+  <h1><%= t("all_words")%> <%= @category.title %></h1>
+  <% if current_user.is_admin? %>
+    <%= link_to "#" do %>
+      <span class= "btn btn-primary center" >
+        <%= t "create_word" %>
+      </span>
+    <% end %>
+  <% end %><br>
+  <table class="table">
+    <thead class="table-title">
+      <tr>
+        <td><%= t "word" %></td>
+        <td><%= t "mean" %></td>
+        <td></td>
+        <td class="center"><%= t "action" %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      </tr>
+    </tbody>
+  </table>
+</div>

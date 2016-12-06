@@ -1,0 +1,20 @@
+<% provide :title, t("all_categories") %>
+<div class="fix_box">
+  <h1><%= t "all_categories" %></h1>
+  <ul class="users">
+    <table class="table">
+      <thead class="table-title">
+        <tr>
+          <td><%= t "category" %></td>
+          <td class="center"><%= t "action" %></td>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @categories %>
+      </tbody>
+    </table>
+  <h2>
+    <%= link_to t("create"), new_admin_category_path, class: "btn btn-primary" %>
+  </h2>
+  </ul>
+</div>

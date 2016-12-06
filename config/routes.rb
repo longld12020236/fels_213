@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, except: [:new, :create, :show]
+    resources :categories
   end
 
   root  "static_pages#home"
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   get "signup" => "users#new"
 
   resources :users
+  resources :categories, only: :index
 end
