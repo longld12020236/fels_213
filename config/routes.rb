@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   delete "logout" =>  "sessions#destroy"
   get "signup" => "users#new"
 
-  resources :users
+  resources :users do
+    resources :following, only: :index
+    resources :followers, only: :index
+  end
+  resources :relationships, only: [:create, :destroy]
   resources :categories, only: :index
+  resources :following, only: :index
+  resources :followers, only: :index
 end

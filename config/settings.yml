@@ -5,3 +5,4 @@ max_name: 50
 max_email: 255
 min_password: 6
 per_page: 5
+follow_avatar: 30
