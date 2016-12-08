@@ -5,3 +5,7 @@ max_name: 50
 max_email: 255
 min_password: 6
 per_page: 5
+filter_words:
+  learned: "learned"
+  not_learned: "not_learned"
+  all: "all"

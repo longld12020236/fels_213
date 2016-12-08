@@ -1,0 +1,36 @@
+<% provide :title, t("all_word") %>
+<div class="fix_box">
+  <h1><%= t("all_word") %></h1>
+  <div class="center">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 margin-top">
+        <%= form_tag words_path, method: :get do  %>
+          <span>
+            <%= search_field_tag :search_word, params[:search_word] %>
+          </span>
+          <span>
+            <%= submit_tag "Search", :content => nil,
+              class: "btn btn-success margin-zero"%>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <%= render "search_condition" %>
+  </div>
+  <ul class="users">
+    <table class="table">
+      <thead class="table-title">
+        <tr>
+          <td><%= t "word" %></td>
+          <td><%= t "mean"%></td>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @words %>
+      </tbody>
+    </table>
+    <%= will_paginate %>
+  </ul>
+</div>

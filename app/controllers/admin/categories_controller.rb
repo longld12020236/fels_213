@@ -22,6 +22,9 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def show
+    @words = @category.words.alphabet.paginate page: params[:page],
+      per_page: Settings.per_page
+    session[:cat_id] = @category.id
   end
 
   def edit

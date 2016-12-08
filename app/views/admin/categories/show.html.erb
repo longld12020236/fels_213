@@ -2,7 +2,7 @@
 <div class="fix_box">
   <h1><%= t("all_words")%> <%= @category.title %></h1>
   <% if current_user.is_admin? %>
-    <%= link_to "#" do %>
+    <%= link_to new_admin_category_word_path session[:cat_id] do %>
       <span class= "btn btn-primary center" >
         <%= t "create_word" %>
       </span>
@@ -19,6 +19,7 @@
     </thead>
     <tbody>
       <tr>
+        <%= render @words %>
       </tr>
     </tbody>
   </table>

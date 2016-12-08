@@ -1,0 +1,19 @@
+<tr>
+  <td><%= word.content %></td>
+  <td>
+    <% word.answers.each do |answer| %>
+      <%= answer.content if answer.is_correct %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to admin_category_word_path(@category, word),
+      method: :delete, data: {confirm: "Are you sure?"} do %>
+      <span class="glyphicon glyphicon-trash" title ="<%= t("delete") %>"></span>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to edit_admin_category_word_path(@category, word) do %>
+      <span class="glyphicon glyphicon-edit" title ="<%= t("edit") %>"></span>
+    <% end %>
+  </td>
+</tr>

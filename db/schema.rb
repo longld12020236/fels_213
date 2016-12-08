@@ -77,11 +77,9 @@ ActiveRecord::Schema.define(version: 20161124095600) do
   create_table "words", force: :cascade do |t|
     t.string   "content"
     t.integer  "category_id"
-    t.integer  "result_lesson_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["category_id"], name: "index_words_on_category_id"
-    t.index ["result_lesson_id"], name: "index_words_on_result_lesson_id"
   end
 
 end

@@ -369,3 +369,24 @@ span.picture {
   font-weight: bold;
   color: #428bca;
 }
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+input[type="radio"],
+input.radio {
+  vertical-align:text-top;
+  width:13px;
+  height:13px;
+  padding:0;
+  margin:0;
+  position:relative;
+  overflow:hidden;
+  top:2px;
+}

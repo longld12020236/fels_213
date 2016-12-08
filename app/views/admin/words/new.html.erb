@@ -1,0 +1,10 @@
+<% provide :title, t("create_word")%>
+<% provide :button_submit, t("create")%>
+<div class="fix_box">
+<h1><%= t "create_new_word" %></h1>
+  <ul class="users">
+    <%= form_for [:admin, :category, @word] do |f| %>
+      <%= render "form", f: f %>
+    <%end%>
+  </ul>
+</div>

@@ -1,0 +1,15 @@
+<%= render "shared/error_messages", object: f.object %>
+
+<div class="form-group">
+  <%= f.label :content %>
+  <%= f.text_field :content, class: "form-control shadow" %>
+</div>
+<div>
+  <%= f.fields_for :answers do |answer| %>
+    <%= render "answer", f: answer %>
+  <% end %>
+  <%= link_to_add_fields t("add_answer"), f, :answers %>
+</div>
+<span class="center">
+  <%= f.submit yield(:button_submit), class: "btn btn-primary" %>
+</span>

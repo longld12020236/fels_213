@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    resources :words, only: :index
     resources :users, except: [:new, :create, :show]
-    resources :categories
+    resources :categories do
+      resources :words, except: :show
+    end
   end
 
   root  "static_pages#home"
@@ -14,4 +17,5 @@ Rails.application.routes.draw do
 
   resources :users
   resources :categories, only: :index
+  resources :words, only: :index
 end

@@ -1,0 +1,20 @@
+<%= form_for admin_words_path, method: :get do |f| %>
+  <div class="row center">
+    <%= t("categories") %>
+    <span class="center">
+      <%= select_tag "category_id",
+        options_from_collection_for_select(@categories, "id", "title",
+        params[:category_id]), include_blank: t("all") %>
+    </span>
+    <% Settings.filter_words.each do |key, value| %>
+      <%= label_tag value, class: "radio-inline" do %>
+        <%= radio_button_tag :condition, value,
+          checked = params[:condition] == value || params[:condition].blank? %>
+        <%= value.titleize %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="center">
+    <%= f.submit t("filter"), class: "btn btn-primary" %>
+  </div>
+<% end %>
