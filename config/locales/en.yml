@@ -71,3 +71,14 @@ en:
   following: "Following"
   follow: "Follow"
   unfollow: "Unfollow"
+  time:
+    formats:
+      date_exam: "%d/%m/%Y %H:%M"
+      date_create: "%d/%m/%Y"
+  finish: "Finish"
+  success_create: "Lesson start, good luck!"
+  fail_create: "Cant create lesson"
+  cannot_start: "Lesson cant start because category has no word"
+  confirm_finish: "Are you sure"
+  backslash: "/"
+  question_content: "Chose correct mean of word: "

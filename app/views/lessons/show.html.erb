@@ -1,0 +1,25 @@
+<div class="row fix_box">
+  <div class="container">
+    <div class="title">
+      <p>
+        <%= t "lesson_date" %>
+        <%= l @lesson.created_at, format: :date_exam %>
+      </p>
+      <span><%= t "lesson_result" %></span>
+      <span class="show_score">
+        <%= @lesson.score %>
+        <%= t("backslash")%>
+        <%= @results.count %>
+      </span>
+      <center class="table-title">
+        <h1><%= @lesson.category.title %></h1>
+      </center>
+      <hr>
+    </div>
+    <div>
+      <ol>
+        <%= render @results %>
+      </ol>
+    </div>
+  </div>
+</div>

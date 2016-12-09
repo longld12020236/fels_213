@@ -2,7 +2,10 @@
   <td ><%= category.title %></td>
   <td>
     <span class="center">
-      <%= link_to t("start_lesson"), "#", class: "btn btn-primary" %>
+      <%= form_for @lesson do |f| %>
+        <%= f.hidden_field :category_id, value: category.id %>
+        <%= f.submit t("start_lesson"), class: "btn btn-primary" %>
+      <% end %>
     </span>
   </td>
 </tr>

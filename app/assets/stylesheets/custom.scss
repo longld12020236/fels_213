@@ -369,3 +369,91 @@ span.picture {
   font-weight: bold;
   color: #428bca;
 }
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  box-sizing: content-box;
+  height: 0;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  padding-left: 10px;
+  text-indent: -10px;
+}
+
+li:before {
+  content: none;
+  padding-right: 5px;
+}
+
+.large {
+  width: 100px;
+}
+
+.lesson {
+  width: 80%;
+}
+
+.processBox {
+  background-color: green;
+  position: fixed;
+  margin-top: -70px;
+  margin-left: 1025px;
+  width: 6%;
+  z-index: 100;
+  text-align: center;
+  float: right;
+  color: white;
+  h2 {
+    font-size: 25px;
+    margin-top: 0;
+    color: white;
+  }
+  h3 {
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+}
+
+.show_score {
+  color: green;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+input[type="radio"],
+input.radio {
+    vertical-align:text-top;
+    width:13px;
+    height:13px;
+    padding:0;
+    margin:0;
+    position:relative;
+    overflow:hidden;
+    top:2px;
+}
+
+.btn-large {
+  width: 100%;
+  height: 70px;
+  margin-bottom: 30px;
+  padding: 15px;
+  font-size: 25px;
+}
+
+.activities {
+  list-style: none;
+  padding-left: 0px;
+  li{
+   padding: 5px;
+  }
+}

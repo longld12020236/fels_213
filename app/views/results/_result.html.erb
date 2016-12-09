@@ -1,0 +1,27 @@
+<li>
+  <%= t("question_content") %><strong><%= result.word.content %></strong>
+  <ul>
+    <% result.word.answers.alphabet.each do |answer| %>
+      <li>
+        <%= radio_button_tag result.id, answer.id,
+          result.answer_id == answer.id, disabled: true %>
+        <%= answer.content %>
+      </li>
+    <% end %>
+  </ul>
+  <% if result.answer.present? %>
+    <% if result.answer.is_correct %>
+      <p id="correct" class="label label-primary">
+      <%= t "correct" %></p>
+    <% else %>
+      <p class="label label-danger"><%= t "wrong" %></p>
+      <p><%= t "lesson.correct_answer" %>
+        <strong>
+          <% result.word.answers.each do |answer| %>
+            <%= answer.content if answer.is_correct %>
+          <% end %>
+        </strong>
+      </p>
+    <% end %>
+  <% end %>
+</li>

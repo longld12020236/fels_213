@@ -4,5 +4,6 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.alphabet.paginate page: params[:page],
       per_page: Settings.per_page
+    @lesson = Lesson.new
   end
 end

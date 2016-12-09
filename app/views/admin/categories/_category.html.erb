@@ -1,20 +1,18 @@
-<% @categories.each do |category| %>
-  <tr>
-    <td ><%= category.title %></td>
-    <td>
-      <%= link_to admin_category_path(category) do %>
-        <span class="glyphicon glyphicon-list-alt" title ="<%= t("show_word") %>"></span>
-      <% end %>
-    </td>
-    <td>
-      <%= link_to [:admin, category], method: :delete, data: {confirm: t("confirm_delete")} do %>
-        <span class="glyphicon glyphicon-trash" title ="<%= t("delete") %>"></span>
-      <% end %>
-    </td>
-    <td>
-      <%= link_to edit_admin_category_path(category) do %>
-        <span class="glyphicon glyphicon-edit" title ="<%= t("title_btn") %>"></span>
-      <% end %>
-    </td>
-  </tr>
-<% end %>
+<tr>
+  <td ><%= category.title %></td>
+  <td>
+    <%= link_to admin_category_path(category) do %>
+      <span class="glyphicon glyphicon-list-alt" title ="<%= t("show_word") %>"></span>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to [:admin, category], method: :delete, data: {confirm: t("confirm_delete")} do %>
+      <span class="glyphicon glyphicon-trash" title ="<%= t("delete") %>"></span>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to edit_admin_category_path(category) do %>
+      <span class="glyphicon glyphicon-edit" title ="<%= t("title_btn") %>"></span>
+    <% end %>
+  </td>
+</tr>

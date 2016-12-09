@@ -1,0 +1,33 @@
+<div class="fix_box row">
+  <div class="processBox">
+    <h3><%= t "progress" %></h3>
+    <h2>
+      <span id="answer_count"><%= Settings.answer_count_default %></span>/
+      <span id="total"><%= @lesson.results.count %></span>
+    </h2>
+  </div>
+  <div class="container lesson">
+    <div class="title">
+      <center>
+        <h1 class="table-title"><%= @lesson.category.title %></h1>
+      </center>
+    </div>
+    <div>
+      <%= form_for @lesson do |f| %>
+        <ol>
+          <%= f.fields_for :results, wrapper: false do |result_f| %>
+            <%= render "exam_form", form: result_f %>
+          <% end %>
+        </ol>
+        <span class="center">
+          <%= f.submit t("finish"), class: "btn btn-primary",
+            data: {confirm: t("confirm_finish")} %>
+        </span>
+      <% end %>
+    </div>
+    <span>
+      <%= t "lesson_date" %>
+      <%= l @lesson.created_at, format: :date_exam %>
+    </span>
+  </div>
+</div>

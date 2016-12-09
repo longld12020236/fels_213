@@ -18,6 +18,5 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   resources :categories, only: :index
-  resources :following, only: :index
-  resources :followers, only: :index
+  resources :lessons
 end
