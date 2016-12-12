@@ -67,3 +67,7 @@ en:
   show_word: "Show Word"
   delete: "Delete"
   title_btn: "Title"
+  followers: "Followers"
+  following: "Following"
+  follow: "Follow"
+  unfollow: "Unfollow"
